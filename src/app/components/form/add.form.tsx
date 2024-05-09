@@ -13,6 +13,7 @@ import {
   MenuItem,
   Select,
   TextField,
+  Typography,
 } from "@mui/material";
 
 export default function AddManager() {
@@ -49,6 +50,9 @@ export default function AddManager() {
     >
       <Card variant="outlined">
         <CardContent>
+          <Typography variant="h5" sx={{ fontWeight: "700" }} gutterBottom>
+            Create Advertisement
+          </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <FormControl fullWidth>
@@ -112,7 +116,13 @@ export default function AddManager() {
                   type="file"
                   id="file-upload"
                   onChange={handleFileChange}
+                  sx={{ display: "none" }} // Hide the input element
                 />
+                <label htmlFor="file-upload">
+                  <Button variant="contained" component="span" color="primary">
+                    Choose File
+                  </Button>
+                </label>
                 <FormHelperText>Please upload your file here.</FormHelperText>
               </FormControl>
             </Grid>
